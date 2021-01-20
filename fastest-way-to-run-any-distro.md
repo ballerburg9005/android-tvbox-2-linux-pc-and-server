@@ -1,9 +1,11 @@
 Using Libreelec scaffolding and kernel
 =====================================
 
-Getting Coreelec or Libreelec to boot is a very very easy two-step process. Stick to their howtos to create and boot the stick, see if it works. This will also resize the system partition automatically.
+In this tutorial, we will simply use an Libreelec or Coreelec image and switch out the root file system location via a hook in the initramfs of the Libreelec kernel. 
 
-Now we can simply wipe the second partition (STORAGE), and put the rootfs files from another image onto it (e.g. Ubuntu arm64 for Rasperry Pi). In theory any image should work that is of the same architecture.
+Getting Libreelec to boot is a very very easy two-step process. Stick to their howtos to create and boot the stick, see if it works. This will also resize the system partition automatically.
+
+Now we can simply wipe the second partition (STORAGE), and put the rootfs files from another image onto it (e.g. Ubuntu MATE arm64 for Rasperry Pi). In theory any image should work that is of the same architecture.
 
 In order to get the firmware and module files from Libreelec, do something like this:
 
