@@ -38,4 +38,6 @@ mount /dev/sda2 /sysroot # if installed on USB stick
 mount /dev/mmc??TODO?? /sysroot # if installed on SD card
 ```
 
-Now you should see the graphical installer and can proceed as usual.
+Now you should see the graphical installer and can proceed as usual. 
+
+Hint for Ubuntu MATE: There is a bug that crashes the installer if you have internet connected. 
