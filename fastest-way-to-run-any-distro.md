@@ -38,6 +38,4 @@ mount /dev/sda2 /sysroot # if installed on USB stick
 mount /dev/mmc??TODO?? /sysroot # if installed on SD card
 ```
 
-And this is all there is to it! Xorg and everything should be running out of the box.
-
-I tested this with Ubuntu MATE and it only complained that the disk labels are wrong.
+Now you should see the graphical installer and can proceed as usual.
