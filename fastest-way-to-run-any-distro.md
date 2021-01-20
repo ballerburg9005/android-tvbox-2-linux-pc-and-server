@@ -1,9 +1,7 @@
+Using Libreelec scaffolding and kernel
+=====================================
 
-...
-
-==Using Coreelec scaffolding and kernel==
-
-Getting Libreelec to boot is a very very easy two-step process. Stick to their howtos to create and boot the stick, see if it works. This will also resize the system partition automatically.
+Getting Coreelec or Libreelec to boot is a very very easy two-step process. Stick to their howtos to create and boot the stick, see if it works. This will also resize the system partition automatically.
 
 Now we can simply wipe the second partition (STORAGE), and put the rootfs files from another image onto it (e.g. Ubuntu arm64 for Rasperry Pi). In theory any image should work that is of the same architecture.
 
