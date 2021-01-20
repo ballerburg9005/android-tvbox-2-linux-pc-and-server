@@ -1,7 +1,7 @@
 Using Libreelec scaffolding and kernel
 =====================================
 
-In this tutorial, we will simply use an Libreelec or Coreelec image and switch out the root file system location via a hook in the initramfs of the Libreelec kernel. 
+In this tutorial, we will simply use an Libreelec or Coreelec image and switch out the root file system and its location via a hook in the initramfs of the Libreelec kernel. 
 
 Getting Libreelec to boot is a very very easy two-step process. Stick to their howtos to create and boot the stick, see if it works. This will also resize the system partition automatically.
 
