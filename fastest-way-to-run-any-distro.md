@@ -40,4 +40,16 @@ mount /dev/mmc??TODO?? /sysroot # if installed on SD card
 
 Now you should see the graphical installer and can proceed as usual. 
 
-Hint for Ubuntu MATE: There is a bug that crashes the installer if you have internet connected. 
+But before that it might be smart to enable sshd first and set root password to 1234. You can simply do that by chrooting into the image on your PC:
+
+```
+# install qemu-arm-static first
+cp $(which qemu-arm-static) /media/STORAGE/usr/bin
+chroot /media/STORAGE qemu-arm-static /bin/bash
+
+# this might be specific to Ubuntu/Debian
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+apt-get install openssh-server
+passwd
+```
+
