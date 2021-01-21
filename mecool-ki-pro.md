@@ -15,10 +15,14 @@ KERNEL=="mali", MODE="0660", GROUP="video"
 KERNEL=="ump", MODE="0660", GROUP="video"
 ```
 
+```
 cp /usr/lib/libMali.m450.so from Coreelec to /var/lib/libMali.so ???
 ln -s /var/lib/libMali.so /usr/lib/libmali.so.0 ???
 ln -s /var/lib/libMali.so /usr/lib/libmali.so
+```
 
 => mali_drm missing
 
 -> test Libreelec 5.11 kernel image first. Make sure it includes mali_drm
+
+no browser VPU? -> really true?
