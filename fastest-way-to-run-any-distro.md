@@ -40,7 +40,7 @@ mount /dev/mmc??TODO?? /sysroot # if installed on SD card
 
 Now you can boot the image and should see the graphical installer.
 
-But before you do that its smart to enable sshd first and set root password to 1234. You can simply do that by chrooting into the image on your PC:
+But before you do that its smart to enable sshd first and set root password. You can do it by simply chrooting into the image on your PC:
 
 ```
 # install qemu-arm-static first
