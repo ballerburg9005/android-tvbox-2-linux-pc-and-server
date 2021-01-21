@@ -3,7 +3,7 @@ Using Libreelec scaffolding and kernel
 
 In this tutorial, we will simply use an Libreelec/Coreelec image and switch out the root file system and its location, thanks to a hook in the initramfs of the Libreelec kernel that calls "post-sysroot.sh" on the first partition.
 
-Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time. Not only can you quickly switch to a newer kernel using this method, but you can also compile newer kernel versions yourself directly from the Libreelec repo without configuring anything by hand.
+Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time and effort. Not only can you quickly switch to a newer kernel using this method, but you can also compile newer kernel versions yourself directly from the Libreelec repo without configuring anything by hand.
 
 The first step is to get Libreelec to boot. This only requires two simple actions: 1. burning the image to USB stick, 2. then copying correct DTB file from a subfolder to "dtb.img" on the first partition (LIBREELEC). Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. For Coreelec make sure to use the "-ng" version that doesn't use the obsolete 3.14 kernel.
 
