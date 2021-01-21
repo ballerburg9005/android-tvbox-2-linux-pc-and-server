@@ -1,17 +1,19 @@
 Using Libreelec scaffolding and kernel
 =====================================
 
-In this tutorial, we will simply use an Libreelec or Coreelec image and switch out the root file system and its location via a hook in the initramfs of the Libreelec kernel. 
+In this tutorial, we will simply use an Libreelec/Coreelec image and switch out the root file system and its location, thanks to a hook in the initramfs of the Libreelec kernel that calls "post-sysroot.sh" on the first partition.
 
-Getting Libreelec to boot is a very very easy two-step process. Stick to their howtos to create and boot the stick, see if it works. This will also resize the system partition automatically.
+Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time. Not only can you quickly switch to a newer kernel using this method, but you can also compile newer kernel versions yourself directly from the Libreelec repo without configuring anything by hand.
 
-Now we can simply wipe the second partition (STORAGE), and put the rootfs files from another image onto it (e.g. Ubuntu MATE arm64 for Rasperry Pi). In theory any image should work that is of the same architecture.
+The first step is to get Libreelec to boot. This only requires two simple actions: 1. burning the image to USB stick, 2. then copying correct DTB file from a subfolder to "dtb.img" on the first partition (LIBREELEC). Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. For Coreelec make sure to use the "-ng" version that doesn't use the obsolete 3.14 kernel.
+
+After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). In theory any image should work without any issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64).
 
 In order to get the firmware and module files from Libreelec, do something like this:
 
 ```
 cd ~
-unsquashfs /media/LIBREELEC/SYSTEM
+unsquashfs -d squashfs-root /media/LIBREELEC/SYSTEM 
 cd /media/STORAGE
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/modules/4.9.113/ usr/lib/modules/ -r
 mv usr/lib/firmware usr/lib/firmware_old
@@ -25,7 +27,7 @@ mkdir flash
 mkdir storage
 ```
 
-Finally you should also change /etc/fstab , so that it reflects the correct uuids or labels.
+Finally you should also change /etc/fstab , so that it reflects the new uuids or labels.
 
 
 On the first partition (LIBREELEC), create the file "post-sysroot.sh", with the following content:
@@ -38,9 +40,9 @@ mount /dev/sda2 /sysroot # if installed on USB stick
 mount /dev/mmc??TODO?? /sysroot # if installed on SD card
 ```
 
-Now you can boot the image and should see the graphical installer.
+**Now you can boot the image and should see the graphical installer.**
 
-But before you do that its smart to enable sshd first and set root password. You can do it by simply chrooting into the image on your PC:
+But before you do that it's smart to enable sshd first and set root password. You can do it by simply chrooting into the image on your PC:
 
 ```
 # install qemu-arm-static first
