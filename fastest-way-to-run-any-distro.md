@@ -73,3 +73,4 @@ apt-get install openssh-server
 passwd
 ```
 
+Hint for Ubuntu MATE: I had to remove the flash-kernel package, or it would crash the installer.
