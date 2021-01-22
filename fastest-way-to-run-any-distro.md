@@ -24,15 +24,19 @@ Installing the distribution
 After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). Any image should work without issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). But there are probably update scripts that might run during installation and make false assumptions (e.g. trying to flash Rasperry Pi bootloader) that need to be disabled first.
 
 
+Copy the files from your distribution's image:
+```
+mkdir /tmp/sdX2_from_ubuntu_image/
+I=ubuntu-mate-20.10-desktop-arm64+raspi.img ; mount -o offset=$((512*$(fdisk -o start -l $I | tail -n 1))) $I /tmp/sdX2_from_ubuntu_image/
+cp -ar /tmp/sdX2_from_ubuntu_image/* /media/STORAGE/
+```
+
 In order to get the firmware and module files from Libreelec, do something like this:
 
 ```
 cd ~
 unsquashfs -d squashfs-root /media/LIBREELEC/SYSTEM 
 cd /media/STORAGE
-
-cp -ar /media/sdX2_from_ubuntu_image/* ./
-
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/modules/4.9.113/ usr/lib/modules/ -r
 mv usr/lib/firmware usr/lib/firmware_old
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/firmware usr/lib/ -r
