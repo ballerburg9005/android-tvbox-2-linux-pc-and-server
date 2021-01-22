@@ -37,8 +37,7 @@ In order to get the firmware and module files from Libreelec, do something like 
 unsquashfs -d ~/squashfs-root /media/LIBREELEC/SYSTEM 
 cd /media/STORAGE
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/modules/4.9.113/ usr/lib/modules/ -r
-mv usr/lib/firmware usr/lib/firmware_old
-cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/firmware usr/lib/ -r
+rsync -lr ~/squashfs-root/usr/lib/kernel-overlays/base/lib/firmware/ usr/lib/firmware/
 ```
 
 This is just so that the initramfs from Libreelec feels less confused:
