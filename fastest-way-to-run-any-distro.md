@@ -7,6 +7,8 @@ Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time 
 
 Beware that you need at least kernel 5.2 to use [video acceleration for Mali](https://www.phoronix.com/scan.php?page=news_item&px=Panfrost-DRM-For-Linux-5.2).
 
+I recommend using Libreelec from http://test.libreelec.tv
+
 The first step is to get Libreelec to boot. This only requires two simple actions: 1. burning the image to USB stick, 2. then copying correct DTB file from a subfolder to "dtb.img" on the first partition (LIBREELEC). Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. For Coreelec make sure to use the "-ng" version that doesn't use the obsolete 3.14 kernel.
 
 After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). In theory any image should work without any issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64).
