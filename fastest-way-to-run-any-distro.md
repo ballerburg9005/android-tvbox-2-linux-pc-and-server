@@ -34,8 +34,7 @@ cp -ar /tmp/sdX2_from_ubuntu_image/* /media/STORAGE/
 In order to get the firmware and module files from Libreelec, do something like this:
 
 ```
-cd ~
-unsquashfs -d squashfs-root /media/LIBREELEC/SYSTEM 
+unsquashfs -d ~/squashfs-root /media/LIBREELEC/SYSTEM 
 cd /media/STORAGE
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/modules/4.9.113/ usr/lib/modules/ -r
 mv usr/lib/firmware usr/lib/firmware_old
