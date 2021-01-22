@@ -20,7 +20,7 @@ A flawfless compilation takes an entire day on an i5-2500 (high-end 2010 CPU). W
 ```
 git clone https://github.com/chewitt/LibreELEC.tv/
 cd LibreELEC.tv
-ARCH=aarch64 PROJECT=Amlogic DEVICE=AMLGX ./scripts/build linux
+MAKEFLAGS="-j8" ARCH=aarch64 PROJECT=Amlogic DEVICE=AMLGX ./scripts/build linux
 ```
 
 Fix M4 is too new bug. You might get different bugs.
