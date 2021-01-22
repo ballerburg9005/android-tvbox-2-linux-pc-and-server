@@ -35,3 +35,5 @@ rsync -lr build.LibreELEC-AMLGX.aarch64-9.80-devel/install_pkg/kernel-firmware-2
 rsync -lr build.LibreELEC-AMLGX.aarch64-9.80-devel/install_pkg/dvb-firmware-1.4.0/usr/lib/kernel-overlays/base/lib/firmware/ /media/STORAGE/lib/firmware/
 ```
 If you want to do this for Libreelec, you would have to repack the SYSTEM file from the first partition.
+
+
