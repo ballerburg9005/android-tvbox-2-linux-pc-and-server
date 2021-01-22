@@ -3,24 +3,26 @@ Using Libreelec scaffolding and kernel
 
 In this tutorial, we will simply use an Libreelec image and switch out the root file system and its location, thanks to a hook in the initramfs of the Libreelec kernel that calls "post-sysroot.sh" on the first partition.
 
-Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time and effort. Not only can you quickly switch to a newer kernel from newer Libreelec images using this method, but you can also compile newer kernel versions yourself directly from the Libreelec repo, without configuring a single thing by hand.
+Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time and effort. Not only can you quickly switch to a newer kernel from newer Libreelec images using this method, but you can also compile newer kernel versions yourself directly from the Libreelec repo, without configuring a single thing by hand. 
 
 Beware that you need at least kernel 5.2 to use [video acceleration for Mali](https://www.phoronix.com/scan.php?page=news_item&px=Panfrost-DRM-For-Linux-5.2).
 
+I recommend using https://test.libreelec.tv/ which has the latest kernels.
 
-The first step is to get Libreelec to boot. This only requires two simple actions: 1. burning the image to USB stick, 2. change uEnv.ini on the first partition (LIBREELEC) to pick the correct DTB file for your box. Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. 
 
-If you have an Amlogic box and Libreelec does not boot, try Coreelec-ng first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb files from the Libreelec image. Rename the KERNEL file to kernel.img and the md5 file as well.
+Testing Libreelec
+-----------------
+
+Installing Libreelec only requires two simple actions: 1. burning the image to USB stick, 2. change uEnv.ini on the first partition (LIBREELEC) to pick the correct DTB file for your box. Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. 
+
+If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb files from the Libreelec image to your installation media. Rename the KERNEL file to kernel.img and the md5 file as well.
 
 
 Installing the distribution
 ---------------------------
 
-After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). In theory any image should work without any issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). 
+After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). Any image should work without issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). But there are probably update scripts that might run during installation and make false assumptions (e.g. trying to flash Rasperry Pi bootloader) that need to be disabled first.
 
-```
-# TODO describe how to put the root system to /media/STORAGE
-```
 
 In order to get the firmware and module files from Libreelec, do something like this:
 
@@ -28,6 +30,9 @@ In order to get the firmware and module files from Libreelec, do something like 
 cd ~
 unsquashfs -d squashfs-root /media/LIBREELEC/SYSTEM 
 cd /media/STORAGE
+
+cp -ar /media/sdX2_from_ubuntu_image/* ./
+
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/modules/4.9.113/ usr/lib/modules/ -r
 mv usr/lib/firmware usr/lib/firmware_old
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/firmware usr/lib/ -r
@@ -43,14 +48,14 @@ mkdir storage
 Finally you should also change /etc/fstab , so that it reflects the new uuids or labels.
 
 
-On the first partition (LIBREELEC), create the file "post-sysroot.sh", with the following content:
+On the first partition, create the file "post-sysroot.sh", with the following content:
 
 ```
 #!/bin/bash
 
 umount /sysroot
 mount /dev/sda2 /sysroot # if installed on USB stick
-mount /dev/mmc??TODO?? /sysroot # if installed on SD card
+mount /dev/mmc0blk1p2 /sysroot # if installed on SD card
 ```
 
 **Now you can boot the image and should see the graphical installer.**
