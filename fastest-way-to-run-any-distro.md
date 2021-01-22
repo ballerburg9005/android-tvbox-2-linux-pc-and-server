@@ -1,5 +1,5 @@
 Using Libreelec scaffolding and kernel
-=====================================
+======================================
 
 In this tutorial, we will simply use an Libreelec image and switch out the root file system and its location, thanks to a hook in the initramfs of the Libreelec kernel that calls "post-sysroot.sh" on the first partition.
 
@@ -7,9 +7,28 @@ Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time 
 
 Beware that you need at least kernel 5.2 to use [video acceleration for Mali](https://www.phoronix.com/scan.php?page=news_item&px=Panfrost-DRM-For-Linux-5.2).
 
+
 The first step is to get Libreelec to boot. This only requires two simple actions: 1. burning the image to USB stick, 2. change uEnv.ini on the first partition (LIBREELEC) to pick the correct DTB file for your box. Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. 
 
-My Amlogic box would not boot with Libreelec, until I replaced the "aml_autoscript" with the one from Coreelec. For this to work you need to rename "KERNEL" to "kernel.img" as well, not use the uEnv.ini but save the correct DTB file as "dtb.img", and copy the following files over from the Coreelec image: cfgload, config.ini, resolution.ini.
+
+Amlogic specific issue
+----------------------
+
+My Amlogic box would not boot with Libreelec. But you can use the files from Coreelec. For this to work you need to rename "KERNEL" to "kernel.img" as well, not use the uEnv.ini but save the correct DTB file as "dtb.img", and copy the following files over from the Coreelec image: aml_autoscript, cfgload, config.ini, resolution.ini. Now you must do either of those things:
+
+```
+# change the fat label to "COREELEC"
+fatlabel /dev/sdX1 COREELEC
+
+# -OR- copy the text portion of cfgload into cfgload.txt, change COREELEC to LIBREELEC then:
+mkimage -A arm -O linux -T script -C none -d cfgload.txt cfgload
+```
+
+It might be easier to flash the Coreelec image instead, then just copy KERNEL to kernel.img and the DTB files plus the correct one to "dtb.img".
+
+
+Installing the distribution
+---------------------------
 
 After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). In theory any image should work without any issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). 
 
