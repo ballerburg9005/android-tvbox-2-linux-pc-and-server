@@ -9,6 +9,8 @@ Beware that you need at least kernel 5.2 to use [video acceleration for Mali](ht
 
 The first step is to get Libreelec to boot. This only requires two simple actions: 1. burning the image to USB stick, 2. change uEnv.ini on the first partition (LIBREELEC) to pick the correct DTB file for your box. Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. 
 
+My Amlogic box would not boot with Libreelec, until I replaced the aml_autoscript with the one from Coreelec. For this to work you need to rename "KERNEL" to "kernel.img" as well and save the correct DTB file as "dtb.img".
+
 After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). In theory any image should work without any issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). 
 
 ```
