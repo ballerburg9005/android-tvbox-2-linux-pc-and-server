@@ -10,21 +10,7 @@ Beware that you need at least kernel 5.2 to use [video acceleration for Mali](ht
 
 The first step is to get Libreelec to boot. This only requires two simple actions: 1. burning the image to USB stick, 2. change uEnv.ini on the first partition (LIBREELEC) to pick the correct DTB file for your box. Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. 
 
-
-Amlogic specific issue
-----------------------
-
-My Amlogic box would not boot with Libreelec. But you can use the files from Coreelec. For this to work you need to rename "KERNEL" to "kernel.img" as well, not use the uEnv.ini but save the correct DTB file as "dtb.img", and copy the following files over from the Coreelec image: aml_autoscript, cfgload, config.ini, resolution.ini. Now you must do either of those things:
-
-```
-# change the fat label to "COREELEC"
-fatlabel /dev/sdX1 COREELEC
-
-# -OR- copy the text portion of cfgload into cfgload.txt, change COREELEC to LIBREELEC then:
-mkimage -A arm -O linux -T script -C none -d cfgload.txt cfgload
-```
-
-It might be easier to flash the Coreelec image instead, then just copy KERNEL to kernel.img and the DTB files plus the correct one to "dtb.img".
+If you have an Amlogic box and Libreelec does not boot, try Coreelec-ng first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb files from the Libreelec image. Rename the KERNEL file to kernel.img and the md5 file as well.
 
 
 Installing the distribution
