@@ -21,7 +21,7 @@ If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If 
 Installing the distribution
 ---------------------------
 
-After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). Any image should work without issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). But there are probably update scripts that might run during installation and make false assumptions (e.g. trying to flash Rasperry Pi bootloader) that need to be disabled first.
+After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). Any image should work without issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). But there are probably update scripts that might run during installation and make false assumptions (e.g. trying to flash Rasperry Pi bootloader) that need to be disabled first. I recommend you use qemu and chroot for this as described.
 
 
 Copy the files from your distribution's image:
