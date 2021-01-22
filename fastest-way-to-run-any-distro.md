@@ -3,7 +3,7 @@ Using Libreelec scaffolding and kernel
 
 In this tutorial, we will simply use an Libreelec image and switch out the root file system and its location, thanks to a hook in the initramfs of the Libreelec kernel that calls "post-sysroot.sh" on the first partition.
 
-Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time and effort. Not only can you quickly switch to a newer kernel from newer Libreelec images using this method, but you can also compile newer kernel versions yourself directly from the Libreelec repo, without configuring a single thing by hand. 
+Doing this doesn't just avoid tons of bugs, but it also saves you a lot of time and effort. 
 
 Beware that you need at least kernel 5.2 to use [video acceleration for Mali](https://www.phoronix.com/scan.php?page=news_item&px=Panfrost-DRM-For-Linux-5.2).
 
@@ -15,7 +15,7 @@ Testing Libreelec
 
 Installing Libreelec only requires two simple actions: 1. burning the image to USB stick, 2. change uEnv.ini on the first partition (LIBREELEC) to pick the correct DTB file for your box. Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. 
 
-If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb files from the Libreelec image to your installation media. Rename the KERNEL file to kernel.img and the md5 file as well.
+If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb directory from the Libreelec image to your installation media. Rename the KERNEL file to kernel.img + the md5 file as well. Lastly copy the correct dtb file from the new dtb directory to "dtb.img".
 
 
 Installing the distribution
