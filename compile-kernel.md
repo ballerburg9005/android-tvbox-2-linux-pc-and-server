@@ -1,7 +1,7 @@
 Compiling the Kernel from Libreelec
 ===================================
 
-The best and easiest way to compile a kernel yourself is to use the Coreelec / Libreelec source. For Amlogic, use the specific Github repository mentioned on http://linux-meson.com . Stick to the manual on the Libreelec website.
+The best and easiest way to compile a kernel yourself is to use the Libreelec source. For Amlogic, use the specific Github repository mentioned on http://linux-meson.com . Stick to the manual on the Libreelec website.
 
 TODO: Find out what Libreelec does special, compared to compiling just compiling the kernel.
 
