@@ -49,13 +49,17 @@ mkdir flash
 mkdir storage
 ```
 
-Finally you should also change /etc/fstab , so that it reflects the new uuids or labels.
+Finally you should also change /etc/fstab , so that it reflects the new uuids or labels:
 
+```
+LABEL=STORAGE    /               ext4    defaults,noatime,x-systemd.growfs   0   0
+LABEL=COREELEC   /boot/firmware  vfat    defaults                            0   1
+```
 
 On the first partition, create the file "post-sysroot.sh", with the following content:
 
 ```
-#!/bin/bash
+#!/bin/sh
 
 umount /sysroot
 mount /dev/sda2 /sysroot # if installed on USB stick
