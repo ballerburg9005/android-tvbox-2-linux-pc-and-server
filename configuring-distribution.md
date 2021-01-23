@@ -1,7 +1,7 @@
 speedup tricks
 ==============
 
-
+The following is a list of tricks that either have dramatic effects, or are less obvious and easy to forget about.
 
 faster cache behavior on USB media ([explanation](https://lonesysadmin.net/2013/12/22/better-linux-disk-caching-performance-vm-dirty_ratio/))
 ------------------------------------
@@ -14,4 +14,5 @@ vm.dirty_ratio = 80
 vm.dirty_writeback_centisecs = 3000 
 ```
 
-check cpufreq setting
+check cpufreq settings
+----------------------
