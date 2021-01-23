@@ -77,8 +77,12 @@ for i in sys proc dev; do mount -o bind /$i /media/STORAGE/$i; done
 chroot /media/STORAGE qemu-aarch64-static /bin/bash
 
 # this might be specific to Ubuntu/Debian
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+export HOSTNAME=ubuntu
 apt install openssh-server
+systemctl enable ssh
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 passwd
 apt remove flash-kernel 
 ```
+
+
