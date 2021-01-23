@@ -85,7 +85,7 @@ echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 passwd
 apt remove flash-kernel 
 apt-mark hold flash-kernel
-systemctl enable serial-getty@ttyS0
+systemctl enable serial-getty@ttyS0   # try ttyAML0 if it chokes during boot when device doesn't exist
 ```
 
 
