@@ -80,9 +80,11 @@ chroot /media/STORAGE qemu-aarch64-static /bin/bash
 export HOSTNAME=ubuntu
 apt install openssh-server
 systemctl enable ssh
+echo "systemctl start ssh" >> /etc/rc.local # make sure it is on
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 passwd
 apt remove flash-kernel 
+systemctl enable serial-getty@ttyS0
 ```
 
 
