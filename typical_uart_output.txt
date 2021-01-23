@@ -1,0 +1,268 @@
+GXL:BL1:9ac50e:a1974b;FEAT:ADFC318C;POC:3;RCY:0;EMMC:0;READ:0;0.0;CHK:0;
+TE: 153170
+
+BL2 Built : 17:47:29, Jul 11 2017. 
+gxl gcb74862-dirty - jiaxing.ye@droid05
+
+set vdd cpu_a to 1120 mv
+set vdd cpu_b to 1050 mv
+set vddee to 1000 mv
+Board ID = 6
+CPU clk: 1200MHz
+DQS-corr enabled
+DDR scramble enabled
+DDR3 chl: Rank0+1 @ 792MHz - FAIL
+DDR4 chl: Rank0+1 @ 792MHz - PASS
+Rank0: 1024MB(auto)-2T-18
+Rank1: 1024MB(auto)-2T-18
+DataBus test pass!
+AddrBus test pass!
+-s
+Load fip header from eMMC, src: 0x0000c200, des: 0x01400000, size: 0x00004000
+New fip structure!
+Load bl30 from eMMC, src: 0x00010200, des: 0x01100000, size: 0x0000d600
+Load bl31 from eMMC, src: 0x00020200, des: 0x05100000, size: 0x0002c600
+Load bl32 from eMMC, src: 0x00050200, des: 0x05300000, size: 0x00036200
+Load bl33 from eMMC, src: 0x00088200, des: 0x01000000, size: 0x00065c00
+NOTICE:  BL3-1: v1.0(release):a625749
+NOTICE:  BL3-1: Built : 11:25:15, Aug 25 2017
+[BL31]: GXL CPU setup!
+NOTICE:  BL31: BL33 decompress pass
+mpu_config_enable:ok
+[Image: gxl_v1.1.3243-377db0f 2017-09-07 11:28:58 qiufang.dai@droid07]
+OPS=0x02
+78 9 d4 c0 9 35 a 74 53 1f 6 ea [0.534394 Inits done]
+secure task start!
+high task start!
+low task start!
+INFO:    BL3-2: ATOS-V2.0.2-g7eeafe5 #4 Thu May 18 13:19:01 CST 2017 arm
+INFO:    BL3-2: Chip: GXL Rev: B (21:B - 0:2)
+INFO:    BL3-2: crypto engine DMA
+INFO:    BL3-2: secure time TEE
+INFO:    BL3-2: CONFIG_DEVICE_SECURE 0xb200000e
+
+
+U-Boot 2015.01-ged30cac-dirty (Oct 10 2017 - 18:38:15)
+
+DRAM:  2 GiB
+Relocation Offset is: 76eb4000
+register usb cfg[0][1] = 0000000077f5b7f0
+[CANVAS]canvas init
+boot_device_flag : 1
+Nand PHY Ver:1.01.001.0006 (c) 2013 Amlogic Inc.
+init bus_cycle=6, bus_timing=7, system=5.0ns
+reset failed
+get_chip_type and ret:fffffffe
+get_chip_type and ret:fffffffe
+chip detect failed and ret:fffffffe
+nandphy_init failed and ret=0xfffffff1
+MMC:   aml_priv->desc_buf = 0x0000000073eb4790
+aml_priv->desc_buf = 0x0000000073eb6ab0
+SDIO Port B: 0, SDIO Port C: 1
+emmc/sd response timeout, cmd8, status=0x1ff2800
+emmc/sd response timeout, cmd55, status=0x1ff2800
+init_part() 293: PART_TYPE_AML
+[mmc_init] mmc init success
+dtb magic 5f4c4d41
+      Amlogic multi-dtb tool
+      Multi dtb detected
+      Multi dtb tool version: v2 .
+      Support 2 dtbs.
+        aml_dt soc: gxl platform: q20x variant: 2g
+        dtb 0 soc: gxl   plat: q20x   vari: 1g
+        dtb 1 soc: gxl   plat: q20x   vari: 2g
+      Find match dtb: 1
+start dts,buffer=0000000073eb9300,dt_addr=0000000073ec4300
+      Amlogic multi-dtb tool
+      Multi dtb detected
+      Multi dtb tool version: v2 .
+      Support 2 dtbs.
+        aml_dt soc: gxl platform: q20x variant: 2g
+        dtb 0 soc: gxl   plat: q20x   vari: 1g
+        dtb 1 soc: gxl   plat: q20x   vari: 2g
+      Find match dtb: 1
+parts: 10
+00:      logo   0000000002000000 1
+01:  recovery   0000000002000000 1
+02:       rsv   0000000000800000 1
+03:       tee   0000000000800000 1
+04:     crypt   0000000002000000 1
+05:      misc   0000000002000000 1
+06:      boot   0000000002000000 1
+07:    system   0000000080000000 1
+08:     cache   0000000020000000 2
+09:      data   ffffffffffffffff 4
+init_part() 293: PART_TYPE_AML
+eMMC/TSD partition table have been checked OK!
+check pattern success
+mmc env offset: 0x27400000 
+In:    serial
+Out:   serial
+Err:   serial
+reboot_mode=cold_boot
+[store]To run cmd[emmc dtb_read 0x1000000 0x40000]
+_verify_dtb_checksum()-917: calc 5de63fce, store 5de63fce
+_verify_dtb_checksum()-917: calc 5de63fce, store 5de63fce
+dtb_read()-1039: total valid 2
+dtb_read()-1106: do nothing
+      Amlogic multi-dtb tool
+      Multi dtb detected
+      Multi dtb tool version: v2 .
+      Support 2 dtbs.
+        aml_dt soc: gxl platform: q20x variant: 2g
+        dtb 0 soc: gxl   plat: q20x   vari: 1g
+        dtb 1 soc: gxl   plat: q20x   vari: 2g
+      Find match dtb: 1
+vpu: clk_level in dts: 7
+vpu: set clk: 666667000Hz, readback: 666660000Hz(0x300)
+vpu: vpu_clk_gate_init_off
+vpp: vpp_init
+hpd_state=1
+[1080p60hz] is invalid for cvbs.
+set hdmitx VIC = 16
+config HPLL = 2970000
+HPLL: 0xc000027b
+config HPLL done
+j = 4  vid_clk_div = 1
+hdmitx: set enc for VIC: 16
+HDMITX-DWC addr=0x10004006 rd_data=0x40
+Error: HDMITX-DWC exp_data=0xff mask=0x9f
+rx version is 1.4 or below  div=10
+hdmtix: set audio
+hdmitx phy setting done
+vpp: vpp_pq_load pq val error !!!
+Net:   dwmac.c9410000amlkey_init() enter!
+[EFUSE_MSG]keynum is 4
+[BL31]: tee size: 0
+
+Start read misc partition datas!
+info->attemp_times = 0
+info->active_slot = 0
+info->slot_info[0].bootable = 1
+info->slot_info[0].online = 1
+info->slot_info[1].bootable = 0
+info->slot_info[1].online = 0
+info->attemp_times = 0
+attemp_times = 0 
+active slot = 0 
+wipe_data=successful
+wipe_cache=successful
+upgrade_step=2
+[OSD]load fb addr from dts
+[OSD]fb_addr for logo: 0x7f851000
+[OSD]load fb addr from dts
+[OSD]fb_addr for logo: 0x7f851000
+[CANVAS]addr=0x7f851000 width=3840, height=2160
+amlkey_init() enter!
+amlkey_init() 71: already init!
+[EFUSE_MSG]keynum is 4
+[BL31]: tee size: 0
+[KM]Error:f[key_manage_query_size]L507:key[usid] not programed yet
+[KM]Error:f[key_manage_query_size]L507:key[deviceid] not programed yet
+gpio: pin GPIOAO_2 (gpio 102) value is 0
+detect upgrade key
+gpio: pin GPIOAO_2 (gpio 102) value is 0
+InUsbBurn
+noSof
+card out
+emmc/sd response timeout, cmd8, status=0x1ff2800
+emmc/sd response timeout, cmd55, status=0x1ff2800
+emmc/sd response timeout, cmd1, status=0x1ff2800
+[MSG]mmcinfo failed!
+emmc/sd response timeout, cmd8, status=0x1ff2800
+emmc/sd response timeout, cmd55, status=0x1ff2800
+emmc/sd response timeout, cmd1, status=0x1ff2800
+(Re)start USB...
+USB0:   USB3.0 XHCI init start
+Register 2000140 NbrPorts 2
+Starting the controller
+USB XHCI 1.00
+scanning bus 0 for devices... 4 USB Device(s) found
+       scanning usb for storage devices... init_part() 278: PART_TYPE_DOS
+Device NOT ready
+   Request Sense returned 02 3A 00
+Device NOT ready
+   Request Sense returned 02 3A 00
+Device NOT ready
+   Request Sense returned 02 3A 00
+Device NOT ready
+   Request Sense returned 02 3A 00
+max USB Storage Device reached: 5 stopping
+5 Storage Device(s) found
+reading aml_autoscript
+1466 bytes read in 22 ms (64.5 KiB/s)
+## Executing script at 01080000
+## defenv_reserve
+Saving Environment to aml-storage...
+mmc env offset: 0x27400000 
+Writing to MMC(1)... emmc/sd write error, cmd25, status=0x1ff2100
+mmc write failed
+emmc/sd response timeout, cmd12, status=0xa1ff2800
+mmc fail to send stop cmd
+failed
+amlkey_init() enter!
+amlkey_init() 71: already init!
+[EFUSE_MSG]keynum is 4
+[BL31]: tee size: 0
+[KM]Error:f[key_manage_query_size]L507:key[usid] not programed yet
+[KM]Error:f[key_manage_query_size]L507:key[deviceid] not programed yet
+emmc/sd response timeout, cmd8, status=0x1ff2800
+emmc/sd response timeout, cmd55, status=0x1ff2800
+emmc/sd response timeout, cmd1, status=0x1ff2800
+(Re)start USB...
+USB0:   USB3.0 XHCI init start
+Register 2000140 NbrPorts 2
+Starting the controller
+USB XHCI 1.00
+scanning bus 0 for devices... 4 USB Device(s) found
+       scanning usb for storage devices... init_part() 278: PART_TYPE_DOS
+Device NOT ready
+   Request Sense returned 02 3A 00
+Device NOT ready
+   Request Sense returned 02 3A 00
+Device NOT ready
+   Request Sense returned 02 3A 00
+Device NOT ready
+   Request Sense returned 02 3A 00
+max USB Storage Device reached: 5 stopping
+5 Storage Device(s) found
+reading cfgload
+1940 bytes read in 22 ms (85.9 KiB/s)
+## Executing script at 01080000
+Using device usb, number 0, partition 1, CoreELEC on eMMC: no
+reading dtb.img
+29330 bytes read in 36 ms (794.9 KiB/s)
+reading resolution.ini
+** Unable to read file resolution.ini **
+reading config.ini
+7028 bytes read in 23 ms (297.9 KiB/s)
+reading kernel.img
+11091319 bytes read in 1480 ms (7.1 MiB/s)
+## Booting kernel from Legacy Image at 01080000 ...
+   Image Name:   
+   Image Type:   AArch64 Linux Kernel Image (lzo compressed)
+   Data Size:    11091255 Bytes = 10.6 MiB
+   Load Address: 01b80000
+   Entry Point:  01b80000
+   Verifying Checksum ... OK
+load dtb from 0x1000000 ......
+      Amlogic multi-dtb tool
+      Single dtb detected
+libfdt fdt_path_offset() returned FDT_ERR_NOTFOUND
+[rsvmem] fdt get prop fail.
+   Uncompressing Kernel Image ... OK
+   kernel loaded at 0x01b80000, end = 0x0326a008
+libfdt fdt_path_offset() returned FDT_ERR_NOTFOUND
+[rsvmem] fdt get prop fail.
+libfdt fdt_path_offset() returned FDT_ERR_NOTFOUND
+[rsvmem] fdt get prop fail.
+   Loading Device Tree to 000000001fff5000, end 000000001ffff291 ... OK
+fdt_instaboot: no instaboot image
+libfdt fdt_path_offset() returned FDT_ERR_NOTFOUND
+[rsvmem] fdt get prop fail.
+
+Starting kernel ...
+
+uboot time: 18234974 us
+[BL31]: tee size: 0
+domain-0 init dvfs: 4
