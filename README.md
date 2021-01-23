@@ -11,6 +11,7 @@ how the images are made
 * Compile Kernel: this is is most cases not required
 * Configuring Distribution: speedups, etc.
 * **TODO** autoscripts Yunohost
+* **TODO** all written so far is written for doing proof-of-concept work, the endgoal is to create a working modded image not a working installation
 
 for endusers
 ------------
