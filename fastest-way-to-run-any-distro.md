@@ -15,7 +15,7 @@ Testing Libreelec
 
 Installing Libreelec only requires two simple actions: 1. burning the image to USB stick, 2. change uEnv.ini on the first partition (LIBREELEC) to pick the correct DTB file for your box. Stick to their howtos to create and boot the stick, see if everything works in Libreelec (sound, wifi, DVB tuner, etc). This will also resize the second partition (STORAGE) automatically, which we will use as the root partition instead. 
 
-If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb directory from the Libreelec image to your installation media. Rename the KERNEL file to kernel.img + the md5 file as well. Lastly copy the correct dtb file from the new dtb directory to "dtb.img".
+If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb directory from the Libreelec image to your installation media. Rename the KERNEL file to kernel.img + the md5 file as well. Lastly copy the correct dtb file from the new dtb directory to "dtb.img". You then need to use "COREELEC" - not "LIBREELEC" - for all commands I listed.
 
 
 Installing the distribution
@@ -53,7 +53,7 @@ Finally you should also change /etc/fstab , so that it reflects the new uuids or
 
 ```
 LABEL=STORAGE    /               ext4    defaults,noatime,x-systemd.growfs   0   0
-LABEL=COREELEC   /boot/firmware  vfat    defaults                            0   1
+LABEL=LIBREELEC   /boot/firmware  vfat    defaults                            0   1
 ```
 
 On the first partition, create the file "post-sysroot.sh", with the following content:
