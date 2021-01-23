@@ -73,6 +73,7 @@ But before you do that it's smart to enable sshd first, set the root password an
 ```
 # install qemu-arm-static first
 cp $(which qemu-aarch64-static) /media/STORAGE/usr/bin
+for i in sys proc dev; do mount -o bind /$i /media/STORAGE/$i; done
 chroot /media/STORAGE qemu-aarch64-static /bin/bash
 
 # this might be specific to Ubuntu/Debian
