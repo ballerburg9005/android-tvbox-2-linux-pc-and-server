@@ -62,7 +62,7 @@ On the first partition, create the file "post-sysroot.sh", with the following co
 #!/bin/sh
 
 umount /sysroot
-mount /dev/mmc0blk1p2 /sysroot # if installed on SD card
+mount /dev/mmcblk1p2 /sysroot # if installed on SD card
 #mount /dev/sda2 /sysroot # if installed on USB stick
 ```
 
