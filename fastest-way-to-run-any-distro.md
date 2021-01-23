@@ -52,7 +52,7 @@ mkdir storage
 Finally you should also change /etc/fstab , so that it reflects the new uuids or labels:
 
 ```
-LABEL=STORAGE    /               ext4    defaults,noatime,x-systemd.growfs   0   0
+LABEL=STORAGE     /               ext4    defaults,noatime,x-systemd.growfs   0   0
 LABEL=LIBREELEC   /boot/firmware  vfat    defaults                            0   1
 ```
 
