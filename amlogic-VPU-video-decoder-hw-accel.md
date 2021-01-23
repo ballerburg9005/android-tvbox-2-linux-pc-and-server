@@ -12,6 +12,10 @@ EndSection
 
 * **TODO** how to double-buffer to avoid tearing?
 
+* 220 web content / 80 firefox
+
+* one hang, heavy disk IO, usb media sucked badly: probably at fault
+
 Oibaf repository for testing bleeding edge mensa (but doesn't seem to be that much newer):
 ```
 add-apt-repository ppa:oibaf/graphics-drivers
