@@ -21,7 +21,7 @@ If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If 
 Installing the distribution
 ---------------------------
 
-After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). Any image should work without issues that is of the same architecture (make sure to not mix arm/armhf and arm64/aarch64). But there are probably update scripts that might run during installation and make false assumptions (e.g. trying to flash Rasperry Pi bootloader) that need to be disabled first. I recommend you use qemu and chroot for this as described.
+After testing Libreelec, we simply wipe the second partition and put the root partition files from another image onto it (e.g. Ubuntu MATE aarch64 for Rasperry Pi). Any image of the same architectur should work without issues. But beware of Rasperry Pi specific packages, like flash-kernel, that might crash the first-run installer. 
 
 
 Copy the files from your distribution's image:
@@ -31,6 +31,7 @@ I=ubuntu-mate-20.10-desktop-arm64+raspi.img ; mount -o offset=$((512*$(fdisk -o 
 cp -ar /tmp/sdX2_from_ubuntu_image/* /media/STORAGE/
 ```
 
+
 In order to get the firmware and module files from Libreelec, do something like this:
 
 ```
@@ -39,6 +40,7 @@ cd /media/STORAGE
 cp ~/squashfs-root/usr/lib/kernel-overlays/base/lib/modules/5.11.0-rc3/ usr/lib/modules/ -r
 rsync -lr ~/squashfs-root/usr/lib/kernel-overlays/base/lib/firmware/ usr/lib/firmware/
 ```
+
 
 This is just so that the initramfs from Libreelec feels less confused:
 ```
@@ -62,7 +64,7 @@ mount /dev/mmc0blk1p2 /sysroot # if installed on SD card
 
 **Now you can boot the image and should see the graphical installer.**
 
-But before you do that it's smart to enable sshd first and set root password. You can do it by simply chrooting into the image on your PC:
+But before you do that it's smart to enable sshd first, set the root password and also remove flash-kernel. You can do it by simply chrooting into the image on your PC:
 
 ```
 # install qemu-arm-static first
@@ -71,8 +73,7 @@ chroot /media/STORAGE qemu-arm-static /bin/bash
 
 # this might be specific to Ubuntu/Debian
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-apt-get install openssh-server
+apt install openssh-server
 passwd
+apt remove flash-kernel 
 ```
-
-Hint for Ubuntu MATE: I had to remove the flash-kernel package, or it would crash the installer.
