@@ -72,8 +72,8 @@ But before you do that it's smart to enable sshd first, set the root password an
 
 ```
 # install qemu-arm-static first
-cp $(which qemu-arm-static) /media/STORAGE/usr/bin
-chroot /media/STORAGE qemu-arm-static /bin/bash
+cp $(which qemu-aarch64-static) /media/STORAGE/usr/bin
+chroot /media/STORAGE qemu-aarch64-static /bin/bash
 
 # this might be specific to Ubuntu/Debian
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
