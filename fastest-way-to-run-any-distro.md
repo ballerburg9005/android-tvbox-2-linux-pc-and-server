@@ -84,6 +84,7 @@ echo "systemctl start ssh" >> /etc/rc.local # make sure it is on
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 passwd
 apt remove flash-kernel 
+apt-mark hold flash-kernel
 systemctl enable serial-getty@ttyS0
 ```
 
