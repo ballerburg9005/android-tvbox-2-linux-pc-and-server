@@ -62,8 +62,8 @@ On the first partition, create the file "post-sysroot.sh", with the following co
 #!/bin/sh
 
 umount /sysroot
-mount /dev/sda2 /sysroot # if installed on USB stick
 mount /dev/mmc0blk1p2 /sysroot # if installed on SD card
+#mount /dev/sda2 /sysroot # if installed on USB stick
 ```
 
 **Now you can boot the image and should see the graphical installer.**
