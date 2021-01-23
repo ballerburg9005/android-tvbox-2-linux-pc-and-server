@@ -1,28 +1,12 @@
-* Check 5.11 Kernel from Libreelec branch mentioned on linux-meson.com
 
--> https://wiki.debian.org/PanfrostLima
+* Use 5.11 Kernel 
+* comes with video decoder HW acceleration in browser and media player
+* works out of the box via mesa and framebuffer driver
+* If Xorg doesn't start, you may need to add this to /etc/X11/xorg.conf
 ```
-apt install libglx-mesa0 libgl1-mesa-dri
+Section "ServerFlags"
+        Option "AutoAddGPU" "off"
+EndSection
 ```
-
--> https://linux-sunxi.org/Mali_binary_driver -> outdated?
-
-* 4.9 Coreelec kernel comes with mali driver kernel module
-
-vim /etc/udev/rules.d/50-mali.rules
-```
-KERNEL=="mali", MODE="0660", GROUP="video"
-KERNEL=="ump", MODE="0660", GROUP="video"
-```
-
-```
-cp /usr/lib/libMali.m450.so from Coreelec to /var/lib/libMali.so ???
-ln -s /var/lib/libMali.so /usr/lib/libmali.so.0 ???
-ln -s /var/lib/libMali.so /usr/lib/libmali.so
-```
-
-=> mali_drm missing
-
--> test Libreelec 5.11 kernel image first. Make sure it includes mali_drm
-
-no browser VPU? -> really true?
+* VPU doesn't work quite right, weird blocky tearing
+* **TODO** how to double-buffer to avoid tearing?
