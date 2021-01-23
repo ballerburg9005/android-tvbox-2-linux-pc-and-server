@@ -10,6 +10,6 @@ Overview
 ** TODO intro text**
 
 
-* Fastest way to run any distro: Combine a precompiled Libreelec kernel with Distribution of choice
+* Fastest way to run any distro: Combine a precompiled Libreelec kernel with distribution image of choice
 * Compile Kernel: this is is most cases not required
 * Configuring Distribution: install speedups, Yunohost
