@@ -76,7 +76,6 @@ cp $(which qemu-aarch64-static) /media/STORAGE/usr/bin
 for i in sys proc dev; do mount -o bind /$i /media/STORAGE/$i; done
 chroot /media/STORAGE qemu-aarch64-static /bin/bash
 
-# this might be specific to Ubuntu/Debian
 export HOSTNAME=ubuntu
 apt install openssh-server
 systemctl enable ssh
