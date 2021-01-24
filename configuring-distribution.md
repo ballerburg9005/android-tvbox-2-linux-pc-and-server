@@ -55,10 +55,8 @@ The speedup on youtube is huge. Once the video plays, it plays all the same thou
 }
 ```
 
-Greasemonkey scripts for Youtube
---------------------------------
+Lower mouse polling rate
+------------------------
 
-Disable mouse movement:
-```
-window.addEventListener("mousemove", function (event) { event.stopPropagation();}, true);
-```
+When using Youtube or Facebook, wiggling the mouse around can cause as much as an additional 80% CPU load. Some mice have a 10x worse performance impact than others. On mini-keyboard trackpads you can reduce the polling rate very low, and hence save some CPU, because they are either way clunky to use it makes no real difference. Usbhid.mousepoll=10 e.g. add the following to config.ini (for Coreelec)
+usbopts='usbhid.mousepoll=10'
