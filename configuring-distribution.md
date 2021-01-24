@@ -55,3 +55,10 @@ The speedup on youtube is huge. Once the video plays, it plays all the same thou
 }
 ```
 
+Greasemonkey scripts for Youtube
+--------------------------------
+
+Disable mouse movement:
+```
+window.addEventListener("mousemove", function (event) { event.stopPropagation();}, true);
+```
