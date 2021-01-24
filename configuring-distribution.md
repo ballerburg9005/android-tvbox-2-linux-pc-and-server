@@ -38,3 +38,20 @@ check cpufreq settings
 
 * govenor = performance?
 * freq stuck low?
+
+Firefox -> change useragent to make certain sites like Youtube more lightweight
+------------------------------------------------------------------------------
+
+The speedup on youtube is huge. Once the video plays, it plays all the same though.
+
+* install extension "User agent switcher and manager"
+* Click the toolbar icon, go to "options" (it's above the blue button "Test UA")
+* pick "Custom Mode" and insert the following:
+
+```
+{
+  "youtube.com": "Mozilla 5.0 (Android 7.0: Mobile; rv:68.0) Gecko 68.0 Firefox/68.0",
+  "dailymotion.com": "Mozilla 5.0 (Android 7.0: Mobile; rv:68.0) Gecko 68.0 Firefox/68.0",
+}
+```
+
