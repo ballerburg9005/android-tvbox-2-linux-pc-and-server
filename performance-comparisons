@@ -1,0 +1,11 @@
+
+Mecool Ki Pro Cortex A-53 Mali 450 2GB / with Class 10 128GB - 18MB/s r/w card
+--------------------------------------------------------------------
+For Ubuntu MATE 20
+
+* Boot time to Login/Xorg: 30s
+* Cursor visible: 55s
+* Background loaded: 70s
+* Last autorun finishes (=error popup): 90s
+* Firefox load time (window visible): 10s
+* Firefox finished loading: 15s
