@@ -9,3 +9,15 @@ For Ubuntu MATE 20
 * Last autorun finishes (=error popup): 90s
 * Firefox load time (window visible): 10s
 * Firefox finished loading: 15s
+
+
+X96 Max Plus Cortex A-55 Mali 31 4GB / with Class 10 128GB - 18MB/s r/w card
+--------------------------------------------------------------------
+For Ubuntu MATE 20
+
+* Boot time to Login/Xorg: 73s
+* Cursor visible: 90s
+* Background loaded: 115s
+* Last autorun finishes (=error popup): 400s?
+* Firefox load time (window visible): 6s
+* Firefox finished loading: 30s
