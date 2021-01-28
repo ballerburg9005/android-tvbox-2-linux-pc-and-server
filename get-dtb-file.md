@@ -31,3 +31,15 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 41943040      0x2800000       gzip compressed data, from Unix, last modified: 1970-01-01 00:00:00 (null date)
 42205184      0x2840000       gzip compressed data, from Unix, last modified: 1970-01-01 00:00:00 (null date)
 113246208     0x6C00000       Linux EXT filesystem, blocks count: 286720, image size: 293601280, rev 1.0, ext4 filesystem data, UUID=4a570d5b-283c-458d-96d9-e3a714091409
+```
+
+Copy from Android
+=================
+This might be easier, but your system needs to be rooted for it.
+
+```
+su
+dd if=/dev/dtb of=/storage/1234-1234/dtb.raw.gz #put to usb stick
+```
+
+What I got from this was the entire dtb partition, gzip compressed. so do another binwalk and copy the dtb file as described earlier in "Copy from eMMC".
