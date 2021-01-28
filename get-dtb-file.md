@@ -17,7 +17,7 @@ A=41945088; B=41988096; dd if=/dev/mmcblk0 of=dtb.img bs=512 skip=$(($A/512)) co
 dtc -O dts dtb.img -o dtbs.txt # verifies that it worked
 ```
 
-If no DTB file shows up on binwalk, then the DTB file is part of the Android kernel. Download [extract-dtb](https://github.com/PabloCastellano/extract-dtb) for this.
+???If no DTB file shows up on binwalk, then the DTB file might be part of the Android kernel. Download [extract-dtb](https://github.com/PabloCastellano/extract-dtb) for this.
 
 ```
 binwalk /dev/mmcblk0 
