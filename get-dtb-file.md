@@ -3,7 +3,7 @@ Sometimes the DTB file that comes with Libreelec doesn't work quite right. A cer
 Copy from eMMC
 ==============
 ```
-binwalk /dev/mmcblk0 
+$ binwalk /dev/mmcblk0 
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
@@ -13,14 +13,15 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 41988096      0x280B000       device tree image (dtb)
 42008795      0x28100DB       eCos RTOS string reference: "ecos"
 ...
-A=41945088; B=41988096; dd if=/dev/mmcblk0 of=dtb.img bs=512 skip=$(($A/512)) count=$(($(($B-$A))/512))
-dtc -O dts dtb.img -o dtbs.txt # verifies that it worked
+
+$ A=41945088; B=41988096; dd if=/dev/mmcblk0 of=dtb.img bs=512 skip=$(($A/512)) count=$(($(($B-$A))/512))
+$ dtc -O dts dtb.img -o dtbs.txt # verifies that it worked
 ```
 
 ???If no DTB file shows up on binwalk, then the DTB file might be part of the Android kernel. Download [extract-dtb](https://github.com/PabloCastellano/extract-dtb) for this.
 
 ```
-binwalk /dev/mmcblk0 
+$ binwalk /dev/mmcblk0 
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
@@ -38,8 +39,8 @@ Copy from Android
 This might be easier, but your system needs to be rooted for it.
 
 ```
-su
-dd if=/dev/dtb of=/storage/1234-1234/dtb.raw.gz #put to usb stick
+$ su
+$ dd if=/dev/dtb of=/storage/1234-1234/dtb.raw.gz #put to usb stick
 ```
 
 What I got from this was the entire dtb partition, gzip compressed. so do another binwalk and copy the dtb file as described earlier in "Copy from eMMC".
