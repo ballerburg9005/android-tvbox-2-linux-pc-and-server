@@ -37,3 +37,15 @@ rsync -lr build.LibreELEC-AMLGX.aarch64-9.80-devel/install_pkg/dvb-firmware-1.4.
 If you want to do this for Libreelec, you would have to repack the SYSTEM file from the first partition.
 
 
+== force recompile ==
+The Libreelec build system doesn't work for source code changes. Edit scripts/build to excempt the linux package on line 47:
+
+``` 
+   if [ "${PKG_DEEPHASH}" = "${STAMP_PKG_DEEPHASH}" -a "${BUILD_WITH_DEBUG}" = "${STAMP_BUILD_WITH_DEBUG}" -a "${PKG_NAME}" != "linux" ]; then
+     # stamp matched: already built, do nothing
+     pkg_lock_status "UNLOCK" "${PKG_NAME}:${TARGET}" "build" "already built"
+     exit 0
+   fi
+```
+
+
