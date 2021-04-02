@@ -1,8 +1,11 @@
-# linux-tvbox-revolution
-Transform a $30 Android TVbox into a home PC, media center and server for all your data. 
+# Transform a $30 Android TVbox into a home PC, media center and server for all your data. 
 
 I just begun this project and only use this as a scratchpatch.
 
+Anything usable is available in [The Wiki](https://github.com/ballerburg9005/android-tvbox-into-linux-plus-server/wiki) and can be edited by anyone.
+
+
+# NOTES
 
 how the images are made 
 -----------------------
