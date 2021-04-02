@@ -17,6 +17,7 @@ Installing Libreelec only requires two simple actions: 1. burning the image to U
 
 If you have an Amlogic box it might not boot. Try Coreelec-ng instead first. If Coreelec works, copy the SYSTEM. SYSTEM.md5, KERNEL, KERNEL.md5 and dtb directory from the Libreelec image to your installation media. Rename the KERNEL file to kernel.img + the md5 file as well. Lastly copy the correct dtb file from the new dtb directory to "dtb.img". You then need to use "COREELEC" - not "LIBREELEC" - for all commands I listed.
 
+There are two files on the Libreelec and Coreelec servers: img.gz (the burnable disk image) and .tar (only the files).
 
 Installing the distribution
 ---------------------------
