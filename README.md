@@ -2,7 +2,7 @@
 
 I just begun this project and only use this as a scratchpatch.
 
-Anything usable is available in [The Wiki](https://github.com/ballerburg9005/android-tvbox-into-linux-plus-server/wiki) and can be edited by anyone.
+Anything usable is available in [The Wiki](https://github.com/ballerburg9005/android-tvbox-2-linux-pc-and-server/wiki) and can be edited by anyone.
 
 
 # NOTES
