@@ -1,5 +1,4 @@
-Transform a $30 Android TVbox into a home PC, media center and server for all your data. 
-===============
+**Transform a $30 Android TVbox into a home PC, media center and server for all your data.**
 
 I just begun this project and only use this as a scratchpatch.
 
