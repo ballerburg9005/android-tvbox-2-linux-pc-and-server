@@ -2,23 +2,8 @@
 
 I just begun this project and only use this as a scratchpatch.
 
-Anything usable is available in [The Wiki](https://github.com/ballerburg9005/android-tvbox-2-linux-pc-and-server/wiki) and can be edited by anyone.
+Ultimately I want to make an image for a certain box, where everything is working flawlessly. I also want to document all the important steps how other people can make an image themselves.  There is no image yet, but you can check out 
 
+[The Wiki](https://github.com/ballerburg9005/android-tvbox-2-linux-pc-and-server/wiki) 
 
-# NOTES
-
-how the images are made 
------------------------
-
-* Fastest way to run any distro: Combine a precompiled Libreelec kernel with distribution image of choice
-* Compile Kernel: this is is most cases not required
-* Configuring Distribution: speedups, etc.
-* **TODO** autoscripts Yunohost
-* **TODO** all written so far is written for doing proof-of-concept work, the endgoal is to create a working modded image not a working installation
-
-for endusers
-------------
-
-* community infrastructure to have image flashed
-* crash course on tv boxes for computer clubs / tech savvy friends
-* instructions to flash image without help
+for instructions.
