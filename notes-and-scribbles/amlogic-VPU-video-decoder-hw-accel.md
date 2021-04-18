@@ -1,4 +1,17 @@
 
+
+
+
+
+
+
+
+
+
+
+OLD
+====
+
 * Use 5.11 Kernel 
 * comes with video decoder HW acceleration in browser and media player
 * works out of the box via mesa and framebuffer driver
