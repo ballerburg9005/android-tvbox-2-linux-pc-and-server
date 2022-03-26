@@ -22,4 +22,5 @@ For Ubuntu MATE 20
 * Firefox load time (window visible): 6s
 * Firefox finished loading: 30s
 
-**It is much faster with SSD and USB 3.0**
+
+---> !!! It is much faster with SSD and USB 3.0 !!!
