@@ -21,3 +21,5 @@ For Ubuntu MATE 20
 * Last autorun finishes (=error popup): 400s?
 * Firefox load time (window visible): 6s
 * Firefox finished loading: 30s
+
+**It is much faster with SSD and USB 3.0**
