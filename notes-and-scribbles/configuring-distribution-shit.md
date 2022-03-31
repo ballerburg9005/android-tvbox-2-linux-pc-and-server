@@ -61,4 +61,4 @@ Lower mouse polling rate
 When using Youtube or Facebook, wiggling the mouse around can cause as much as an additional 80% CPU load. Some mice have a 10x worse performance impact than others. On mini-keyboard trackpads you can reduce the polling rate very low, and hence save some CPU, because they are either way clunky to use it makes no real difference. Usbhid.mousepoll=10 e.g. add the following to config.ini (for Coreelec)
 usbopts='usbhid.mousepoll=10'
 
-* This is a nice idea, but unfortunately there is a known bug in the kernel and no one is willing to fix it since 10 years.
+* This is a nice idea, but unfortunately there is a known bug in the kernel and no one is willing to fix it since 10 years. So it just doesn't work.
