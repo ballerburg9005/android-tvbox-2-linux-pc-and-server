@@ -3,7 +3,7 @@ speedup tricks
 
 The following is a list of tricks that either have dramatic effects, or are less obvious and easy to forget about.
 
-=> surprise: nothing has dramatic effects. Just scribbles in this doc.
+=> **surprise: nothing whatsoever you can do has dramatic effects. Basically just old scribbles in this doc.**
 
 more lax cache behavior on USB media ([explanation](https://lonesysadmin.net/2013/12/22/better-linux-disk-caching-performance-vm-dirty_ratio/))
 ------------------------------------
