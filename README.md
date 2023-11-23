@@ -1,4 +1,4 @@
-**Transform a $30 Android TVbox into a home PC, media center and server for all your data.**
+## Transform a $30 Android TVbox into a home PC, media center and server for all your data.
 
 This project is incomplete and quite inactive. Please be aware that some issues, like wifi or sound not working, might have resolved now with time after 2 years.
 
