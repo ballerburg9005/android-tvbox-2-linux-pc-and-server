@@ -10,7 +10,7 @@ for instructions.
 
 ## personal experience
 
-Overall, while it is quite possible to get to a workable result (esp. for a server), with some random Amlogic box chances are you will experience pitfalls along the way and end up with some issues remaining (e.g. no HDMI audio). I had an USB TTL adapter for serial console, so it was much easier to work around a non-booting image. Ultimately the performance of Cortex A55 chips is not good enough, to e.g. play Youtube in 1080p directly in the browser, and A72 isn't *that* much better either. I would say "just wait a bit for tech to get better", but unfortunately there has been little improvement recently. So at this point, yes you can probably use some cheap Amlogic box as a PC and server and media center ... but its still too challenging, there are unknowns, and the chop and fiddle factor is quite high.
+Overall, while it is quite possible to get to a workable result (esp. for a server), with some random Amlogic box chances are you will experience pitfalls along the way and end up with some issues remaining (e.g. no HDMI audio). I had an USB TTL adapter for serial console, so it was much easier to work around a non-booting image. Ultimately the performance of Cortex A55 chips is not good enough, to e.g. play Youtube in 1080p directly in the browser, and A72 isn't *that* much better either. I would say "just wait a bit for tech to get better", like A76-better, but unfortunately there has been little improvement recently in the $30 TV box universe. So at this point, yes you can probably use some cheap Amlogic TV box as a PC and server and media center ... but its still too challenging, there are unknowns, and the chop and fiddle factor is quite high. 
 
 ## what to pick
 
