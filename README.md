@@ -1,6 +1,6 @@
 ## Transform a $30 Android TVbox into a home PC, media center and server for all your data.
 
-This project is incomplete and quite inactive. Please be aware that some issues, like wifi or sound not working, might have resolved now with time after 2 years.
+This project is an unfinished attempt and is quite inactive. Please be aware that some issues mentioned, like wifi or sound not working, might have resolved now with time after 2 years.
 
 Ultimately I wanted to make an image for a certain cheap box (most are Amlogic), where everything was working flawlessly. I also started documenting all the important steps how other people can make an image themselves.  There is no image yet, but you can check 
 
